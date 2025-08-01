@@ -1,0 +1,52 @@
+# SKOCH-5
+100mbps 
+proxies:
+  - name: "BDIX FTP 01"
+    type: socks5
+    server: ftpbdix1.ftpbd.net
+    port: 1080
+
+  - name: "BDIX FTP 02"
+    type: socks5
+    server: ftpbdix2.bdixftp.net
+    port: 1080
+
+  - name: "BDIX FTP 03"
+    type: socks5
+    server: 103.91.229.66
+    port: 1080
+
+  - name: "BDIX FTP 04"
+    type: socks5
+    server: 103.150.90.45
+    port: 1080
+
+  - name: "BDIX FTP 05"
+    type: socks5
+    server: 103.163.210.12
+    port: 1080
+
+  - name: "BDIX FTP 06"
+    type: socks5
+    server: ftp.proxybdix.net
+    port: 1080
+
+  - name: "BDIX FTP 07"
+    type: socks5
+    server: 103.130.214.10
+    port: 1080
+
+  - name: "BDIX FTP 08"
+    type: socks5
+    server: 103.160.199.10
+    port: 1080
+
+  - name: "BDIX FTP 09"
+    type: socks5
+    server: ftpbd.premproxy.xyz
+    port: 1080
+
+  - name: "BDIX FTP 10"
+    type: socks5
+    server: 103.148.138.10
+    port: 1080
