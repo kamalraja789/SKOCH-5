@@ -1,52 +1,139 @@
-# SKOCH-5
-100mbps 
 proxies:
-  - name: "BDIX FTP 01"
-    type: socks5
-    server: ftpbdix1.ftpbd.net
-    port: 1080
+  - name: "RiRsServer 01"
+    type: http
+    server: 121.200.61.221
+    port: 6565
 
-  - name: "BDIX FTP 02"
+  - name: "RiRsServer 02"
     type: socks5
-    server: ftpbdix2.bdixftp.net
-    port: 1080
+    server: 103.186.238.1
+    port: 9169
+    username: "true"
+    password: "true"
 
-  - name: "BDIX FTP 03"
-    type: socks5
-    server: 103.91.229.66
-    port: 1080
+  - name: "RiRsServer 03"
+    type: http
+    server: 121.200.63.205
+    port: 8742
 
-  - name: "BDIX FTP 04"
+  - name: "RiRsServer 04"
     type: socks5
-    server: 103.150.90.45
-    port: 1080
+    server: 103.38.55.55
+    port: 1088
+    username: "test"
+    password: "test"
 
-  - name: "BDIX FTP 05"
+  - name: "RiRsServer 05"
     type: socks5
-    server: 103.163.210.12
-    port: 1080
+    server: 103.166.253.94
+    port: 1088
+    username: "test"
+    password: "test"
 
-  - name: "BDIX FTP 06"
+  - name: "RiRsServer 06"
     type: socks5
-    server: ftp.proxybdix.net
-    port: 1080
+    server: 202.4.105.122
+    port: 1088
+    username: "test"
+    password: "test"
 
-  - name: "BDIX FTP 07"
+  - name: "RiRsServer 07"
     type: socks5
-    server: 103.130.214.10
-    port: 1080
+    server: 203.76.220.168
+    port: 1052
+    username: "exrex"
+    password: "exrex"
 
-  - name: "BDIX FTP 08"
-    type: socks5
-    server: 103.160.199.10
-    port: 1080
+  - name: "RiRsServer 08"
+    type: http
+    server: 45.115.112.138
+    port: 7675
 
-  - name: "BDIX FTP 09"
+  - name: "RiRsServer 09"
     type: socks5
-    server: ftpbd.premproxy.xyz
-    port: 1080
+    server: 103.91.128.49
+    port: 11011
 
-  - name: "BDIX FTP 10"
+  - name: "RiRsServer 10"
     type: socks5
-    server: 103.148.138.10
+    server: 220.247.165.129
+    port: 1088
+    username: "test"
+    password: "test"
+
+  - name: "RiRsServer 11"
+    type: socks5
+    server: 103.91.128.110
+    port: 11011
+
+  - name: "RiRsServer 12"
+    type: socks5
+    server: 103.91.128.241
+    port: 11011
+
+  - name: "RiRsServer 13"
+    type: socks5
+    server: 123.253.37.110
+    port: 6699
+    username: "3xp"
+    password: "3xp"
+
+  - name: "RiRsServer 14"
+    type: socks5
+    server: 103.114.96.246
     port: 1080
+    username: "Admintest"
+    password: "Admintest"
+
+  - name: "RiRsServer 15"
+    type: socks5
+    server: 103.91.128.58
+    port: 11011
+    username: "Feline"
+    password: "Feline"
+
+proxy-groups:
+  - name: "Manual Selection"
+    type: select
+    proxies:
+      - "Load Balance"
+      - "RiRsServer 01"
+      - "RiRsServer 02"
+      - "RiRsServer 03"
+      - "RiRsServer 04"
+      - "RiRsServer 05"
+      - "RiRsServer 06"
+      - "RiRsServer 07"
+      - "RiRsServer 08"
+      - "RiRsServer 09"
+      - "RiRsServer 10"
+      - "RiRsServer 11"
+      - "RiRsServer 12"
+      - "RiRsServer 13"
+      - "RiRsServer 14"
+      - "RiRsServer 15"
+
+  - name: "Load Balance"
+    type: load-balance
+    strategy: round-robin
+    url: "http://www.gstatic.com/generate_204"
+    interval: 300
+    proxies:
+      - "RiRsServer 01"
+      - "RiRsServer 02"
+      - "RiRsServer 03"
+      - "RiRsServer 04"
+      - "RiRsServer 05"
+      - "RiRsServer 06"
+      - "RiRsServer 07"
+      - "RiRsServer 08"
+      - "RiRsServer 09"
+      - "RiRsServer 10"
+      - "RiRsServer 11"
+      - "RiRsServer 12"
+      - "RiRsServer 13"
+      - "RiRsServer 14"
+      - "RiRsServer 15"
+
+rules:
+  - MATCH,Manual Selection
